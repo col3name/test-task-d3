@@ -27,7 +27,7 @@ const Login: React.FC<LoginProps> = ({
     if (!isExpired) {
       redirect('/dashboard')
     }
-  }, []);
+  }, [isExpired]);
   const onLogin = async () => {
     try {
       if (loading) {

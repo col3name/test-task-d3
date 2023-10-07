@@ -22,7 +22,7 @@ export const useUpdateDashboardStat= () => {
           dispatch(updateDashboard(stat));
         });
     }
-  }, []);
+  }, [dashboard, dispatch]);
 
   return {
     dashboard, error

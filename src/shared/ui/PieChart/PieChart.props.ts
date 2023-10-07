@@ -14,7 +14,7 @@ export type Box = {
   top: number, right: number, bottom: number, left: number,
 };
 
-export type PieChartProps = {
+export type UsePieChartProps = {
   id: string,
   segments: Segment[],
   outerRadius?: number,
@@ -22,5 +22,7 @@ export type PieChartProps = {
   radius?: number,
   margin?: Box,
   onHover: (value: string) => void,
+}
+export type PieChartProps = UsePieChartProps & {
   children: React.ReactNode,
 }

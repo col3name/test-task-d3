@@ -17,7 +17,7 @@ export const useDashboard = (type: DashType, statistic: Statistic) => {
 
   useLayoutEffect(() => {
     setTotal(getTotal(statistic))
-  }, []);
+  }, [statistic]);
   const onMouseOver = (value: DashType) => {
     setActive(value);
   };

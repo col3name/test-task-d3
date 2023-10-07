@@ -1,0 +1,32 @@
+.title {
+  color: #223055;
+  font: 700 28px/36px Open Sans,sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.titleLarge {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.titleMedium {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.titleAlignLeft {
+  text-align: left;
+}
+
+.titleAlignCenter {
+  text-align: center;
+}
+
+.titleAlignRight {
+  text-align: right;
+}
+
+

@@ -1,0 +1,23 @@
+.pieChartWrapper {
+  position: relative;
+}
+
+.pieChart path:hover {
+  cursor: pointer;
+}
+
+.pieChartCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pieChartCardTitle {
+  font: 600 36px/42px 'Open Sans', Arial, sans-serif;
+  color: #ee674a;
+}
+.pieChartCardSubtitle {
+  font: 600 24px/34px 'Open Sans', Arial, sans-serif;
+  color: #b9b2ba;
+}

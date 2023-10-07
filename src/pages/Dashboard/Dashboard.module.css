@@ -1,0 +1,17 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboardWrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}

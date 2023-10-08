@@ -14,7 +14,6 @@ import {
 } from './Dashboard.props';
 import {useDashboard} from './hooks/useDashboard';
 
-
 const DashboardStatistic: React.FC<DashboardStatisticProps> = ({
   type,
   statistic,
@@ -34,7 +33,7 @@ const DashboardStatistic: React.FC<DashboardStatisticProps> = ({
   }
   return (
     <div>
-      <PieChart id={type} segments={data} outerRadius={150}  innerRadius={130} onHover={ onMouseOver }>
+      <PieChart activeSegment={active} id={type} segments={data} outerRadius={150}  innerRadius={130} onHover={ onMouseOver }>
         <Title align={TitleAlign.Center} size={TitleSize.Medium} color={Colors.gray50} >
           { getTitle() }
         </Title>
@@ -43,7 +42,10 @@ const DashboardStatistic: React.FC<DashboardStatisticProps> = ({
         </Title>
       </PieChart>
       <div className={ styles.legendWrapper}>
-        <Legend onMouseOver={ () => setActive('')} onMouseOut={ () => setActive('')}>
+        <Legend
+          onMouseOver={ () => setActive(DashStatusTypes.ALL)}
+          onMouseOut={ () => setActive('')}
+        >
           <span>Всего:</span> <span>{total}</span></Legend>
         <Legend
           active={active === DashStatusTypes.ACTIVE}

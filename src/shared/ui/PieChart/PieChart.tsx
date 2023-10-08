@@ -7,6 +7,7 @@ import {usePieChart} from './hooks/usePieChart';
 
 const PieChart: React.FC<PieChartProps> = ({
   id,
+  activeSegment,
   segments,
   outerRadius = 200,
   innerRadius = 165,
@@ -18,11 +19,11 @@ const PieChart: React.FC<PieChartProps> = ({
   onHover,
 }) => {
   const { idContainer } = usePieChart({
-    id, segments, outerRadius, innerRadius, radius,margin, onHover
+    id, activeSegment, segments, outerRadius, innerRadius, radius,margin, onHover
   });
   return (
     <div className={ styles.pieChartWrapper }>
-      <div className={ styles.pieChartCard}>
+      <div className={ styles.pieChartCard }>
         { children }
       </div>
       <div

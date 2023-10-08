@@ -35,11 +35,10 @@ export const useDashboard = (type: DashType, statistic: Statistic) => {
     }
     return type;
   }
-
   const data = [
-    {label: DashStatusTypes.ACTIVE, data: 1, value: statistic.active, index: 0, padAngle: 0, color: PieChartColors.Active},
-    {label: DashStatusTypes.INACTIVE, data: 2, value: statistic.inactive, index: 0, padAngle: 0, color: PieChartColors.Inactive},
-    {label: DashStatusTypes.COMPLETED, data: 3, value: statistic.completed, index: 0, padAngle: 0, color: PieChartColors.Completed},
+    {label: DashStatusTypes.ACTIVE, data: 1, value: statistic.active, index: 0, hoverColor: '#f2f0f5', padAngle: 0, color: PieChartColors.Active},
+    {label: DashStatusTypes.INACTIVE, data: 2, value: statistic.inactive, index: 0, hoverColor: '#fccf81', padAngle: 0, color: PieChartColors.Inactive},
+    {label: DashStatusTypes.COMPLETED, data: 3, value: statistic.completed, index: 0, hoverColor: '#f9a651', padAngle: 0, color: PieChartColors.Completed},
   ]
 
   const getCount = () => {

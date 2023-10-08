@@ -1,7 +1,10 @@
 import React from 'react';
 
+import {DashStatus} from '../../../widgets/dashboard/Dashboard.props';
+
 export type Segment = {
   color?: string,
+  hoverColor?: string,
   label: string,
   data: string|number,
   value: number,
@@ -16,6 +19,7 @@ export type Box = {
 
 export type UsePieChartProps = {
   id: string,
+  activeSegment: DashStatus,
   segments: Segment[],
   outerRadius?: number,
   innerRadius?: number,

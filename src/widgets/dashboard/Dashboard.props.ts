@@ -13,6 +13,7 @@ export type DashboardStatisticProps = {
   type: DashType,
 }
 export const DashStatusTypes = {
+  ALL: 'all',
   ACTIVE: 'active',
   INACTIVE: 'inactive',
   COMPLETED: 'completed',

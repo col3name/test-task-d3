@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className={ styles.header }>
       <Title size={TitleSize.Medium}>Сводка</Title>
-      <Button onClick={logout}>logout</Button>
+      <Button onClick={logout}>Выйти</Button>
     </div>
   )
 }

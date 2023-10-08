@@ -5,6 +5,7 @@ import {useUpdateDashboardStat} from "../../features/dashboard/hooks";
 
 import {DashTypes} from "../../widgets/dashboard/Dashboard.props";
 import Header from "../../widgets/header/Header";
+import Loader from "../../shared/ui/Loader/Loader";
 
 const Dashboard = () => {
   const { error, dashboard} = useUpdateDashboardStat();
@@ -16,14 +17,14 @@ const Dashboard = () => {
   return (
     <div className={styles.container}>
       <Header />
-      { (!error && dashboard) ? (
+      { (error || !dashboard) ? (
+        <Loader text={ error } />
+      ) : (
         <div className={styles.dashboardWrapper}>
           <DashboardStatistic type={DashTypes.Scenarios} statistic={dashboard.scenarios}/>
           <DashboardStatistic type={DashTypes.List} statistic={dashboard.lists}/>
           <DashboardStatistic type={DashTypes.Dialogs} statistic={dashboard.dialogs}/>
         </div>
-      ) : (
-        <div>{ error || 'Loading...' }</div>
       )}
     </div>
   )

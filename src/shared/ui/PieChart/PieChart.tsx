@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './PieChart.module.css'
 
 import {PieChartProps} from './PieChart.props';
-import {usePieChart} from './hooks';
+import {usePieChart} from './hooks/usePieChart';
 
 const PieChart: React.FC<PieChartProps> = ({
   id,

@@ -161,8 +161,8 @@
 
 .bottomButtonsContainer {
   display: flex;
-  justify-content: end;
   align-items: center;
+  justify-content: flex-end;
   width: 90%;
   position: absolute;
   bottom: 24px;

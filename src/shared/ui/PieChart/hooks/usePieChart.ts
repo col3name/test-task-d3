@@ -1,6 +1,7 @@
-import * as d3 from "d3";
-import {useCallback, useEffect, useLayoutEffect} from "react";
-import {UsePieChartProps} from "../PieChart.props";
+import {useCallback, useEffect, useLayoutEffect} from 'react';
+import * as d3 from 'd3';
+
+import {UsePieChartProps} from '../PieChart.props';
 
 export const usePieChart = ({
   id,

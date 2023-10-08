@@ -1,13 +1,15 @@
+import {useDispatch} from 'react-redux';
+import { useNavigate} from 'react-router-dom';
 import {useMutation} from '@apollo/client';
-import {getToken, isExpiredToken, resetToken, setToken} from "./utils";
-import { LOGIN_MUTATION} from "../../api/graphql";
-import {useClearUser} from "../../../features/user/hooks";
-import {useClearDashboard} from "../../../features/dashboard/hooks";
-import { useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {LoginResult} from "./model";
-import {updateUser} from "../../../features/user/slice";
-import {User} from "../../../features/user/model";
+
+import { LOGIN_MUTATION} from '../../api/graphql';
+import {useClearUser} from '../../../features/user/hooks';
+import {useClearDashboard} from '../../../features/dashboard/hooks';
+import {updateUser} from '../../../features/user/slice';
+import {getToken, isExpiredToken, resetToken, setToken} from './utils';
+
+import {User} from '../../../features/user/model';
+import {LoginResult} from './model';
 
 export const useLogin = () => {
   const [login, { data }] = useMutation(LOGIN_MUTATION);

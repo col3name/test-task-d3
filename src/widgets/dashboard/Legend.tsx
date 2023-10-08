@@ -1,7 +1,9 @@
-import React from "react";
-import cn from "classnames";
-import styles from "./Dashboard.module.css";
-import {DashTextItemProps} from "./Dashboard.props";
+import React from 'react';
+import cn from 'classnames';
+
+import styles from './Dashboard.module.css';
+
+import {DashTextItemProps} from './Dashboard.props';
 
 const Legend: React.FC<DashTextItemProps> = ({
   active = false,

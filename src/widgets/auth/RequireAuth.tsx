@@ -1,6 +1,7 @@
-import {useAuth} from "../../shared/services/auth/hooks";
-import {Navigate, useLocation} from "react-router-dom";
-import React from "react";
+import React from 'react';
+import {Navigate, useLocation} from 'react-router-dom';
+
+import {useAuth} from '../../shared/services/auth/hooks';
 
 export interface RequireAuthProps {
   children: React.ReactNode,

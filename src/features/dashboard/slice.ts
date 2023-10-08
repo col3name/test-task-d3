@@ -1,5 +1,6 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {DashboardStat} from "./model";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import {DashboardStat} from './model';
 
 type DashboardState = {
   statistic: DashboardStat | null,

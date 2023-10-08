@@ -1,4 +1,4 @@
-import {DashboardStat} from "../../../features/dashboard/model";
+import {DashboardStat} from '../../../features/dashboard/model';
 
 export type DashboardStatResponse = {
   dashboard: DashboardStat,

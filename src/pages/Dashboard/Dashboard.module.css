@@ -11,14 +11,14 @@
 }
 
 .dashboardWrapper {
-  display: flex;
-  gap: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+  gap: 40px;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 800px){
   .dashboardWrapper {
-    flex-direction: column;
-    gap: 40px;
+    grid-template-columns: 1fr;
   }
 }

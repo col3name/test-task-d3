@@ -1,6 +1,6 @@
-import { GET_DASHBOARD_STAT, getClientWithAuth } from "../../api/graphql";
-import {getToken} from "../auth/utils";
-import {DashboardStat} from "../../../features/dashboard/model";
+import { GET_DASHBOARD_STAT, getClientWithAuth } from '../../api/graphql';
+import {getToken} from '../auth/utils';
+import {DashboardStat} from '../../../features/dashboard/model';
 
 export const getDashboardStat = async (): Promise<DashboardStat | null> => {
   const token = getToken();

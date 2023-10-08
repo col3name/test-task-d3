@@ -1,4 +1,4 @@
-import {jwtDecode, JwtPayload} from "jwt-decode";
+import {jwtDecode, JwtPayload} from 'jwt-decode';
 
 const TOKEN_KEY = 'accessToken'
 

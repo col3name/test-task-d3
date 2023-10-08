@@ -1,11 +1,12 @@
-import DashboardStatistic from "../../widgets/dashboard/DashboardStatistic";
+import Header from '../../widgets/header/Header';
+import DashboardStatistic from '../../widgets/dashboard/DashboardStatistic';
+import Loader from '../../shared/ui/Loader/Loader';
+
 import styles from './Dashboard.module.css';
 
-import {useUpdateDashboardStat} from "../../features/dashboard/hooks";
+import {useUpdateDashboardStat} from '../../features/dashboard/hooks';
 
-import {DashTypes} from "../../widgets/dashboard/Dashboard.props";
-import Header from "../../widgets/header/Header";
-import Loader from "../../shared/ui/Loader/Loader";
+import {DashTypes} from '../../widgets/dashboard/Dashboard.props';
 
 const Dashboard = () => {
   const { error, dashboard} = useUpdateDashboardStat();

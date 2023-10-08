@@ -1,17 +1,19 @@
-import React from "react";
+import React from 'react';
 
 import PieChart from '../../shared/ui/PieChart/PieChart';
 import Title from '../../shared/ui/Title/Title';
+import Legend from './Legend';
+
+import styles from './Dashboard.module.css';
+
 import {TitleAlign, TitleSize} from '../../shared/ui/Title/Title.props';
 import Colors from '../../shared/styles/colors';
-import Legend from './Legend';
 import {
   DashboardStatisticProps,
   DashStatusTypes,
 } from './Dashboard.props';
-import {useDashboard} from './hooks';
+import {useDashboard} from './hooks/useDashboard';
 
-import styles from './Dashboard.module.css';
 
 const DashboardStatistic: React.FC<DashboardStatisticProps> = ({
   type,
@@ -32,7 +34,7 @@ const DashboardStatistic: React.FC<DashboardStatisticProps> = ({
   }
   return (
     <div>
-      <PieChart id={type} segments={data} outerRadius={160}  innerRadius={140} onHover={ onMouseOver }>
+      <PieChart id={type} segments={data} outerRadius={150}  innerRadius={130} onHover={ onMouseOver }>
         <Title align={TitleAlign.Center} size={TitleSize.Medium} color={Colors.gray50} >
           { getTitle() }
         </Title>

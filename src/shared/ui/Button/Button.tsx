@@ -1,9 +1,9 @@
-import React from 'react'
-import cn from 'classnames'
+import React from 'react';
+import cn from 'classnames';
 
-import styles from './Button.module.css'
+import styles from './Button.module.css';
 
-import ButtonPropsType from "./Button.props";
+import ButtonPropsType from './Button.props';
 
 const Button: React.FC<ButtonPropsType> = ({
   type = 'button',

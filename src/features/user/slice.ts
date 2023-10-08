@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import {User, UserState} from "./model";
+import {User, UserState} from './model';
 
 const initialState: UserState = {
   user: null,

@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("../public/fonts/OpenSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../public/fonts/OpenSans-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../public/fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+
 .App {
   text-align: center;
 }

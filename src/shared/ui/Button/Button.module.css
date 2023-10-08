@@ -4,8 +4,8 @@
 .button {
   min-height: 32px;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background: buttonBackgroundColor;
   border: none;
   color: #FFF;
@@ -161,8 +161,8 @@
 
 .bottomButtonsContainer {
   display: flex;
-  align-items: center;
   justify-content: end;
+  align-items: center;
   width: 90%;
   position: absolute;
   bottom: 24px;

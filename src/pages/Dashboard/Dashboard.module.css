@@ -12,6 +12,13 @@
 
 .dashboardWrapper {
   display: flex;
-  gap: 10px;
+  gap: 35px;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px){
+  .dashboardWrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
 }

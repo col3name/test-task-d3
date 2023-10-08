@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
   Navigate,
@@ -18,7 +18,7 @@ function App() {
   const token = getToken();
   const isExpired = isExpiredToken(token);
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path="/login" element={<Login isExpired={isExpired} />} />
@@ -28,7 +28,7 @@ function App() {
           <Route path='*' element={<Navigate to={isExpired ? '/login' : '/dashboard'} replace />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

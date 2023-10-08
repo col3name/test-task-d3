@@ -8,11 +8,11 @@ import {usePieChart} from './hooks/usePieChart';
 const PieChart: React.FC<PieChartProps> = ({
   id,
   segments,
-  outerRadius = 400,
+  outerRadius = 200,
   innerRadius = 165,
   radius = 20,
   margin = {
-   top: 20, right: 20, bottom: 20, left: 20,
+   top: 10, right: 10, bottom: 10, left: 10,
   },
   children,
   onHover,

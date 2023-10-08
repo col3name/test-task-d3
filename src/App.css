@@ -17,6 +17,7 @@
 
 .App {
   text-align: center;
+  min-width: 320px;
 }
 
 .App-logo {

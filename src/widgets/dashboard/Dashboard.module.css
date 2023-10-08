@@ -1,13 +1,30 @@
-.item {
-  font: 600 14px/16px 'Open Sans', Arial, sans-serif;
+.legendWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  font: 400 18px/24px 'Open Sans', Arial, sans-serif;
   transition: all 0.2s ease-in-out;
 }
 
-.item:hover {
+.legend:hover {
   cursor: pointer;
   text-decoration: underline;
+  font-weight: 600;
 }
-.itemActive {
+
+.legendActive {
   text-decoration: underline;
   color: #8d3caf;
+}
+
+@media screen and (max-width: 1200px) {
+  .legendWrapper {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }

@@ -1,7 +1,15 @@
 import {useAuth} from "../../shared/services/auth/hooks";
 import {Navigate, useLocation} from "react-router-dom";
+import React from "react";
 
-const RequireAuth = ({ children }: { children: JSX.Element }) => {
+export interface RequireAuthProps {
+  children: React.ReactNode,
+}
+
+// @ts-ignore
+const RequireAuth: React.FC<RequireAuthProps> = ({
+  children
+}) => {
   const expired = useAuth();
   const location = useLocation();
 

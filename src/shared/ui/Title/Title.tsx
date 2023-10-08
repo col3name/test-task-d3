@@ -17,6 +17,7 @@ const Title: FC<TitleProps> = ({
     <h1
       style={ { color: color} }
       className={ cn(className, styles.title, {
+        [styles.titleXLarge]: size === TitleSize.XLarge,
         [styles.titleLarge]: size === TitleSize.Large,
         [styles.titleMedium]: size === TitleSize.Medium,
         [styles.titleAlignLeft]: align === TitleAlign.Left,

@@ -1,26 +1,21 @@
 import DashboardStatistic from "../../widgets/dashboard/DashboardStatistic";
-import Button from "../../shared/ui/Button";
-
 import styles from './Dashboard.module.css';
 
-import { useUpdateDashboardStat} from "../../features/dashboard/hooks";
+import {useUpdateDashboardStat} from "../../features/dashboard/hooks";
 
-import {useLogout} from "../../shared/services/auth/hooks";
 import {DashTypes} from "../../widgets/dashboard/Dashboard.props";
+import Header from "../../widgets/header/Header";
 
 const Dashboard = () => {
   const { error, dashboard} = useUpdateDashboardStat();
-  const logout = useLogout();
 
   if (error) {
-    return <div>{error}</div>
+    return <div>{error}</div>;
   }
-  if (!dashboard) {
-    return <div>Loading</div>
-  }
+
   return (
     <div className={styles.container}>
-      <Button onClick={logout}>logout</Button>
+      <Header />
       { (!error && dashboard) ? (
         <div className={styles.dashboardWrapper}>
           <DashboardStatistic type={DashTypes.Scenarios} statistic={dashboard.scenarios}/>
@@ -28,7 +23,7 @@ const Dashboard = () => {
           <DashboardStatistic type={DashTypes.Dialogs} statistic={dashboard.dialogs}/>
         </div>
       ) : (
-        <div>{ error || 'Loading' }</div>
+        <div>{ error || 'Loading...' }</div>
       )}
     </div>
   )

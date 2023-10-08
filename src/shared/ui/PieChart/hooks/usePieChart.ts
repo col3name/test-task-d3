@@ -5,11 +5,11 @@ import {UsePieChartProps} from "../PieChart.props";
 export const usePieChart = ({
   id,
   segments,
-  outerRadius = 400,
+  outerRadius = 300,
   innerRadius = 165,
   radius = 20,
   margin = {
-  top: 20, right: 20, bottom: 20, left: 20,
+    top: 10, right: 10, bottom: 10, left: 10,
   },
   onHover
 }: UsePieChartProps) => {

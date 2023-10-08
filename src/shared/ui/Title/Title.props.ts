@@ -2,6 +2,7 @@ import React from "react";
 import Colors from "../../styles/colors";
 
 export enum TitleSize {
+  XLarge,
   Large,
   Medium,
 }
@@ -16,7 +17,7 @@ type TitleProps = {
   children: React.ReactNode,
   className?: string,
   size?: TitleSize;
-  align: TitleAlign,
+  align?: TitleAlign,
   color?: typeof Colors[keyof typeof Colors],
 };
 

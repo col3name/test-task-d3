@@ -62,6 +62,7 @@ const Login: React.FC<LoginProps> = ({
       <Title align={TitleAlign.Center}>Вход</Title>
       <Title align={TitleAlign.Center} size={TitleSize.Medium} color={Colors.black}>
         Уникальная технология доступная для вашего бизнеса уже сейчас
+        (Логин/Пароль UserOne/pass)
       </Title>
       <TextInput
         value={login}

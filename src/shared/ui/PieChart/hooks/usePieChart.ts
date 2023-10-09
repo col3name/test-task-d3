@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useLayoutEffect} from 'react';
+import {useCallback, useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 import {UsePieChartProps} from '../PieChart.props';
@@ -21,27 +21,27 @@ export const usePieChart = ({
   const width = 2 * outerRadius + margin.left + margin.right;
   const height = 2 * outerRadius + margin.top + margin.bottom;
 
-  const colorScale = d3
+  const colorScale = useRef(d3
     .scaleSequential()
     .interpolator(d3.interpolateCool)
-    .domain([0, segments.length]);
+    .domain([0, segments.length]));
 
-  const onMouseOver = (event: any) => {
+  const onMouseOver = useCallback((event: any) => {
     const type = event.target.getAttribute('data-type');
     onHover(type);
     const color = segments.find(it => it.label === type)?.hoverColor;
     if (color) {
       event.target.setAttribute('style', `fill: ${color}`);
     }
-  };
-  const onMouseOut = (event: any) => {
+  }, [onHover, segments,]);
+  const onMouseOut = useCallback((event: any) => {
     const type = event.target.getAttribute('data-type');
     const color = segments.find(it => it.label === type)?.color;
     if (color) {
       event.target.setAttribute('style', `fill: ${color}`);
     }
     onHover('');
-  };
+  }, [onHover, segments]);
   const drawChart = useCallback(() => {
     d3.select('#' +idContainer)
       .select('svg')
@@ -81,7 +81,7 @@ export const usePieChart = ({
       .attr('d', arcGenerator)
       .style('fill', (_, i) => {
         const { color, label, hoverColor } = segments[i];
-        return ((label === activeSegment || activeSegment === DashStatusTypes.ALL) ? hoverColor : color) || colorScale(i);
+        return ((label === activeSegment || activeSegment === DashStatusTypes.ALL) ? hoverColor : color) || colorScale.current(i);
       })
       .attr('data-type', (_, i) => {
         const {label} = segments[i];
@@ -92,12 +92,10 @@ export const usePieChart = ({
       .on('mouseover', onMouseOver)
       .on('mouseout', onMouseOut)
   }, [
-    colorScale, height, idContainer, innerRadius, outerRadius, onHover, radius,segments,width
+    colorScale, height, idContainer, innerRadius, outerRadius, radius, segments, width,
+    activeSegment, onMouseOut, onMouseOver
   ]);
 
-  useLayoutEffect(() => {
-    drawChart();
-  }, [drawChart]);
   useEffect(() => {
     drawChart();
   }, [segments, drawChart]);

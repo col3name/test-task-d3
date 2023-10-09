@@ -22,7 +22,6 @@ const Login: React.FC<LoginProps> = ({
   const {
     loading,
     success,
-    error,
     login,
     password,
     onLogin,
@@ -40,7 +39,6 @@ const Login: React.FC<LoginProps> = ({
 
   return (
     <form onSubmit={onSubmit} className={styles.container}>
-      { error && (error)}
       <Title align={TitleAlign.Center}>Вход</Title>
       <Title align={TitleAlign.Center} size={TitleSize.Medium} color={Colors.black}>
         Уникальная технология доступная для вашего бизнеса уже сейчас

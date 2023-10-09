@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {v4} from "uuid";
+import {v4 as uuidv4} from "uuid";
 
 import {Notification, NotificationId, NotificationItem, NotificationState} from './model';
 
@@ -11,7 +11,7 @@ export const notificationSlice = createSlice({
   initialState,
   reducers: {
     addNotification: (state: NotificationState, action: PayloadAction<Notification>) => {
-      state.push({ id: v4().toString(), text: action.payload.text, type: action.payload.type, timeout: TIMEOUT});
+      state.push({ id: uuidv4().toString(), ...action.payload, timeout: TIMEOUT});
       console.log(state)
     },
     removeNotification: (state: NotificationState, action: PayloadAction<NotificationId>) =>{

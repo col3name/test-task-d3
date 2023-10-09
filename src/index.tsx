@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const graphQlClient = getClientWithAuth()
+const graphQlClient = getClientWithAuth();
 root.render(
   <React.StrictMode>
     <ApolloProvider client={graphQlClient}>

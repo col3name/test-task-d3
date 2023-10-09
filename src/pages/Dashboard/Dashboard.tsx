@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from '../../widgets/header/Header';
 import DashboardStatistic from '../../widgets/dashboard/DashboardStatistic';
 import Loader from '../../shared/ui/Loader/Loader';

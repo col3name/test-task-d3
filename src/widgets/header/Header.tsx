@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Title from '../../shared/ui/Title/Title';
 import Button from '../../shared/ui/Button';
 

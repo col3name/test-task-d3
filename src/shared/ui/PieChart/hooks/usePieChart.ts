@@ -1,8 +1,10 @@
-import {useCallback, useEffect, useRef} from 'react';
+/* eslint-disable  @typescript-eslint/ban-ts-comment */
+import React, {useCallback, useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 import {UsePieChartProps} from '../PieChart.props';
 import {DashStatusTypes} from '../../../../widgets/dashboard/Dashboard.props';
+type PieType =  number | { valueOf(): number }
 
 export const usePieChart = ({
   id,
@@ -26,19 +28,24 @@ export const usePieChart = ({
     .interpolator(d3.interpolateCool)
     .domain([0, segments.length]));
 
-  const onMouseOver = useCallback((event: any) => {
-    const type = event.target.getAttribute('data-type');
+  const onMouseOver = useCallback((event: React.MouseEvent<SVGPathElement>) => {
+    const element = event.target as HTMLInputElement
+    const type = element.getAttribute('data-type');
+    if (!type) {
+      return
+    }
     onHover(type);
     const color = segments.find(it => it.label === type)?.hoverColor;
     if (color) {
-      event.target.setAttribute('style', `fill: ${color}`);
+      element.setAttribute('style', `fill: ${color}`);
     }
   }, [onHover, segments,]);
-  const onMouseOut = useCallback((event: any) => {
-    const type = event.target.getAttribute('data-type');
+  const onMouseOut = useCallback((event: React.MouseEvent<SVGPathElement>) => {
+    const element = event.target as HTMLInputElement
+    const type = element.getAttribute('data-type');
     const color = segments.find(it => it.label === type)?.color;
     if (color) {
-      event.target.setAttribute('style', `fill: ${color}`);
+      element.setAttribute('style', `fill: ${color}`);
     }
     onHover('');
   }, [onHover, segments]);
@@ -59,15 +66,18 @@ export const usePieChart = ({
     const arcGenerator = d3
       .arc()
       .innerRadius(innerRadius)
-      .cornerRadius(radius)
-      .outerRadius(outerRadius);
+      .outerRadius(outerRadius)
+      .cornerRadius(radius);
+
 
     const pieGenerator = d3
       .pie()
       .padAngle(0)
-      // @ts-ignore
-      .value((d) => {
-        return d
+      .value((d: PieType) => {
+        if (typeof d === 'number') {
+          return d;
+        }
+        return d.valueOf()
       });
 
     const arc = svg
@@ -78,7 +88,7 @@ export const usePieChart = ({
     arc
       .append('path')
       // @ts-ignore
-      .attr('d', arcGenerator)
+      .attr('d', arcGenerator) // eslint-disable-line
       .style('fill', (_, i) => {
         const { color, label, hoverColor } = segments[i];
         return ((label === activeSegment || activeSegment === DashStatusTypes.ALL) ? hoverColor : color) || colorScale.current(i);

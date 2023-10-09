@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {CSSProperties, MouseEventHandler} from 'react';
 
 type ButtonPropsType = {
   disabled?: boolean,
@@ -13,11 +13,11 @@ type ButtonPropsType = {
   children?: React.ReactNode,
   type?: 'submit' | 'reset' | 'button' | undefined;
   className?: string,
-  onClick?: any,
+  onClick?: MouseEventHandler,
   warn?: boolean,
   alert?: boolean,
   done?: boolean,
-  style?: any,
+  style?: CSSProperties | undefined,
 }
 
 export default ButtonPropsType;

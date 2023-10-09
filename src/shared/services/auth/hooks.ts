@@ -27,9 +27,9 @@ export const useLogin = () => {
       setToken(token)
       dispatch(updateUser({username} as User))
       return { success: true, error: null};
-      // @ts-ignore
-    } catch (error: Error) {
-      return { success: false, error: error.message };
+    } catch (error: unknown) {
+      const err = error as Error
+      return { success: false, error: err.message };
     }
   };
 

@@ -1,44 +1,47 @@
 .container {
   position: fixed;
-  width: 1100px;
-  right: 20px;
   top: 0;
-  z-index: 100000;
-  max-height: 100%;
   left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 44px;
+  right: 20px;
+  z-index: 100000;
+
+  width: 1100px;
+  max-height: 100%;
+  margin-top: 30px;
   border-radius: 8px;
+
+  font: 600 18px/24px 'Open Sans', Arial, sans-serif;
+  text-align: center;
+  transform: translateX(-50%);
 }
 
 .notification {
   position: relative;
-  min-height: 64px;
-  border-radius: 8px;
-  color: white;
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-  transition: margin-top 0.5s;
-  white-space: pre-wrap;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 92px;
+  min-height: 40px;
+  border-radius: 8px;
   box-shadow: 0 0 20px rgba(17, 37, 67, 0.2);
+  color: white;
+
+  font: 600 18px/24px 'Open Sans', Arial, sans-serif;
+
+  white-space: pre-wrap;
+  opacity: 0;
+
+  animation: fadeIn 0.5s forwards;
+  transition: margin-top 0.5s;
 }
 
 .closeBtn {
   position: absolute;
   right: 37px;
   color: white;
-  cursor: pointer;
-  font-size: 32px;
-  font-weight: 100;
+  font: 600 18px/24px 'Open Sans', Arial, sans-serif;
   line-height: 0;
+  cursor: pointer;
 }
 
 .info {

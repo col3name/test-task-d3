@@ -1,4 +1,4 @@
-import {NotificationId} from "../../../features/notification/model";
+import {NotificationId, NotificationItem} from 'features/notification/model';
 
 export type NotificationProps = {
   removeNotification: (id: NotificationId) => void,
@@ -6,4 +6,8 @@ export type NotificationProps = {
   id: NotificationId,
   text: string,
   type: string,
+}
+
+export type NotificationsListProps = {
+  notifications: NotificationItem[],
 }

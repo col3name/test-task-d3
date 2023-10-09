@@ -11,7 +11,7 @@ import './App.css';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import RequireAuth from './widgets/auth/RequireAuth';
-import NotificationsList from './shared/ui/notifications';
+import NotificationsList from './widgets/Notifications/Notifications';
 
 import {getToken, isExpiredToken} from './shared/services/auth/utils';
 

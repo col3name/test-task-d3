@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import styles from './styleNotifications.css';
+import styles from './Notifications.module.css';
 
 import { NotificationProps } from './Notification.props';
 
 const REMOVE_TIME_OUT = 4 * 1000;
 const ANIMATION_DELTA = 500;
-const MARGIN_TOP = '20px';
+const MARGIN_TOP = '10px';
 const MARGIN_TOP_AFTER = '-30px';
 
 const Notification: React.FC<NotificationProps> = ({

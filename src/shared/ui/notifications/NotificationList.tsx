@@ -1,12 +1,16 @@
 import React from 'react';
-import Notification from './notification';
 
-import styles from './styleNotifications.css';
-import {useNotificationRemove, useNotificationsSelector} from "../../../features/notification/hooks";
+import Notification from 'shared/ui/notifications/Notification';
 
-const NotificationsList = () => {
-  const notifications = useNotificationsSelector()
-  const removeNotification = useNotificationRemove()
+import styles from 'shared/ui/notifications/Notifications.module.css';
+
+import {NotificationsListProps} from './Notification.props';
+import {useNotificationRemove} from 'features/notification/hooks';
+
+const NotificationsList: React.FC<NotificationsListProps> = ({
+  notifications,
+}) => {
+  const removeNotification = useNotificationRemove();
   return (
     <div className={ styles.container }>
       { notifications.map(notification => (

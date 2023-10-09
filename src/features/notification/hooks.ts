@@ -1,8 +1,8 @@
-import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {useAppDispatch, useAppSelector} from 'app/hooks';
 
 import { selectNotifcations } from './selector';
 import {addNotification, removeNotification} from './slice';
-import {NotificationItem, NotificationType, NotificationId} from "./model";
+import {NotificationItem, NotificationType, NotificationId} from './model';
 
 export const useNotificationsSelector = (): NotificationItem[] => useAppSelector(selectNotifcations);
 export const DEFAULT_ERROR = 'Critical error! Something went wrong. Please retry or contact administrator';
@@ -13,10 +13,8 @@ export const useNotificationAdd = () => {
     dispatch(addNotification({ text, type }));
   };
   const addNotificationFactory = (notificationType: NotificationType) => (text: string) => {
-    console.log({ text });
     dispatch(addNotification({ text, type: notificationType}))
   }
-
 
   const showError = addNotificationFactory('error');
 
@@ -31,6 +29,9 @@ export const useNotificationAdd = () => {
     addNotify,
     showError,
     showSuccess,
+    showInfo,
+    showWarn,
+    showDefaultError,
   };
 };
 

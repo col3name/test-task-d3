@@ -3,8 +3,8 @@ import React, {useCallback, useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 import {UsePieChartProps} from '../PieChart.props';
-import {DashStatusTypes} from '../../../../widgets/dashboard/Dashboard.props';
-type PieType =  number | { valueOf(): number }
+import {DashStatusTypes} from 'widgets/dashboard/Dashboard.props';
+import {PieType} from './usePieChart.props';
 
 export const usePieChart = ({
   id,

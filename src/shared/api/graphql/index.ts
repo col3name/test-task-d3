@@ -1,6 +1,7 @@
 import {ApolloClient, InMemoryCache, gql, createHttpLink} from '@apollo/client';
 import {setContext} from '@apollo/client/link/context';
-import {getToken} from '../../services/auth/utils';
+
+import {getToken} from 'shared/services/auth/utils';
 
 export const url = 'https://graphql-demo.dev.aicall.ru/graphql';
 
@@ -12,7 +13,6 @@ export const client = new ApolloClient({
   uri: url,
   cache: new InMemoryCache(),
 });
-
 
 export const getClientWithAuth = () => {
   client.setLink(getAuthLink().concat(httpLink))

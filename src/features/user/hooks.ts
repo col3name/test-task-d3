@@ -1,4 +1,4 @@
-import {useAppDispatch} from '../../app/hooks';
+import {useAppDispatch} from 'app/hooks';
 import {User} from './model';
 import {clearUser, updateUser} from './slice';
 

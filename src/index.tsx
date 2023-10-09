@@ -7,9 +7,9 @@ import {ApolloProvider} from '@apollo/client';
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { getClientWithAuth} from "./shared/api/graphql";
+import {getClientWithAuth} from './shared/api/graphql';
 
-import { store } from "./app/store";
+import { store } from './app/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

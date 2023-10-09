@@ -1,5 +1,6 @@
 import React from 'react';
-import Colors from '../../styles/colors';
+
+import Colors from 'shared/styles/colors';
 
 export enum TitleSize {
   XLarge,

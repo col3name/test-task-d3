@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Statistic} from '../../features/dashboard/model';
+import {Statistic} from 'features/dashboard/model';
 
 export type DashTextItemProps = {
   active?: boolean,

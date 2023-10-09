@@ -1,19 +1,17 @@
-import {useDispatch} from 'react-redux';
 import { useNavigate} from 'react-router-dom';
 import {useMutation} from '@apollo/client';
 
-import { LOGIN_MUTATION} from '../../api/graphql';
-import {useClearUser} from '../../../features/user/hooks';
-import {useClearDashboard} from '../../../features/dashboard/hooks';
-import {updateUser} from '../../../features/user/slice';
+import { LOGIN_MUTATION} from 'shared/api/graphql';
+import {useClearUser, useUpdateUser} from 'features/user/hooks';
+import {useClearDashboard} from 'features/dashboard/hooks';
 import {getToken, isExpiredToken, resetToken, setToken} from './utils';
 
-import {User} from '../../../features/user/model';
+import {User} from 'features/user/model';
 import {LoginResult} from './model';
 
 export const useLogin = () => {
   const [login, { data }] = useMutation(LOGIN_MUTATION);
-  const dispatch = useDispatch()
+  const updateUser = useUpdateUser()
   const handleLogin = async (user: string, password: string): Promise<LoginResult> => {
     try {
       if (user.length < 3 || password.length < 3) {
@@ -24,11 +22,11 @@ export const useLogin = () => {
       });
       const { data } = response;
       const { token, username } = data.login;
-      setToken(token)
-      dispatch(updateUser({username} as User))
+      setToken(token);
+      updateUser({username} as User)
       return { success: true, error: null};
     } catch (error: unknown) {
-      const err = error as Error
+      const err = error as Error;
       return { success: false, error: err.message };
     }
   };

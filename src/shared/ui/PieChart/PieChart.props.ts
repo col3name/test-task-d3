@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {DashStatus} from '../../../widgets/dashboard/Dashboard.props';
+import {DashStatus} from 'widgets/dashboard/Dashboard.props';
 
 export type Segment = {
   color?: string,

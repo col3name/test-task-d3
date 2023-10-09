@@ -1,11 +1,10 @@
 import {useEffect, useState} from 'react';
 import {redirect} from 'react-router-dom';
 
-import {useLogin} from '../../../shared/services/auth/hooks';
+import {useLogin} from 'shared/services/auth/hooks';
 
 export const useAuth = (isExpired: boolean) => {
   const { handleLogin } = useLogin();
-
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [success, setSuccess] = useState<boolean>(false);

@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './Title.module.css'
 
 import TitleProps, {TitleAlign, TitleSize} from './Title.props';
-import Colors from '../../styles/colors';
+import Colors from 'shared/styles/colors';
 
 const Title: FC<TitleProps> = ({
   className,

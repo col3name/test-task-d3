@@ -7,6 +7,8 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
   pull_request:
+    branches:
+      - main
     types:
       - closed
 jobs:

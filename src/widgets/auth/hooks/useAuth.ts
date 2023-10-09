@@ -1,13 +1,12 @@
 import {useEffect, useState} from 'react';
 import {redirect} from 'react-router-dom';
 
-import {useLogin} from '../../../shared/services/auth/hooks';
-import {useNotificationAdd} from "../../../features/notification/hooks";
+import {useLogin} from 'shared/services/auth/hooks';
+import {useNotificationAdd} from 'features/notification/hooks';
 
 export const useAuth = (isExpired: boolean) => {
   const { handleLogin } = useLogin();
   const { showError } = useNotificationAdd()
-
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [success, setSuccess] = useState<boolean>(false);

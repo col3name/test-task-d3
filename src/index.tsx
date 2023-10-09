@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {ApolloProvider} from "@apollo/client";
-import { getClientWithAuth} from "./shared/api/graphql";
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 
-import { store } from "./app/store";
+import App from './App';
+import {ApolloProvider} from '@apollo/client';
+
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import {getClientWithAuth} from './shared/api/graphql';
+
+import { store } from './app/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

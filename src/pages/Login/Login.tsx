@@ -1,15 +1,15 @@
 import React, {FormEvent} from 'react';
 import {Navigate, useLocation} from 'react-router-dom';
 
-import Title from '../../shared/ui/Title/Title';
-import TextInput from '../../shared/ui/TextInput';
-import Button from '../../shared/ui/Button';
+import Title from 'shared/ui/Title/Title';
+import TextInput from 'shared/ui/TextInput';
+import Button from 'shared/ui/Button';
 
 import styles from './Login.module.css'
 
-import {useAuth} from '../../widgets/auth/hooks/useAuth';
-import {TitleAlign, TitleSize} from '../../shared/ui/Title/Title.props';
-import Colors from '../../shared/styles/colors';
+import {useAuth} from 'widgets/auth/hooks/useAuth';
+import {TitleAlign, TitleSize} from 'shared/ui/Title/Title.props';
+import Colors from 'shared/styles/colors';
 
 export type LoginProps = {
   isExpired: boolean,

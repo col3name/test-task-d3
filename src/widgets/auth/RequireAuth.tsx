@@ -1,13 +1,12 @@
 import React from 'react';
 import {Navigate, useLocation} from 'react-router-dom';
 
-import {useAuth} from '../../shared/services/auth/hooks';
+import {useAuth} from 'shared/services/auth/hooks';
 
 export interface RequireAuthProps {
   children: React.ReactNode,
 }
 
-// @ts-ignore
 const RequireAuth: React.FC<RequireAuthProps> = ({
   children
 }) => {
@@ -17,7 +16,8 @@ const RequireAuth: React.FC<RequireAuthProps> = ({
   if (expired) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  return children;
+  return <>{children}</>;
 }
 
 export default RequireAuth;
+

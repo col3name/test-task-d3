@@ -1,6 +1,7 @@
 import {ApolloClient, InMemoryCache, gql, createHttpLink} from '@apollo/client';
 import {setContext} from '@apollo/client/link/context';
-import {getToken} from '../../services/auth/utils';
+
+import {getToken} from 'shared/services/auth/utils';
 
 export const url = 'https://graphql-demo.dev.aicall.ru/graphql';
 
@@ -13,7 +14,6 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 export const getClientWithAuth = () => {
   client.setLink(getAuthLink().concat(httpLink))
   return client;
@@ -24,7 +24,7 @@ export const getAuthLink = () => {
     return {
       headers: {
         ...headers,
-        Authorization: authToken ? `Bearer ${authToken}` : '', // Include the token if it exists
+        Authorization: authToken ? `Bearer ${authToken}` : '',
       },
     };
   });

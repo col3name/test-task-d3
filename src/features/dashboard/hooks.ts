@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
-import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {useAppDispatch, useAppSelector} from 'app/hooks';
 
 import {selectDashboard} from './selector';
 import {clearDashboard, updateDashboard} from './slice';
-import {getDashboardStat} from '../../shared/services/dashboard/hooks';
+import {getDashboardStat} from 'shared/services/dashboard/hooks';
 import {DashboardStat} from './model';
 
 export const useDashboardSelector = (): DashboardStat |null => useAppSelector(selectDashboard);

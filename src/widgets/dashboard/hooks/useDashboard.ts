@@ -2,7 +2,7 @@ import { useLayoutEffect, useState} from 'react';
 
 import {ACTIVE_TEXT, COMPLETED_TEXT, DashStatus, DashStatusTypes, DashType, INACTIVE_TEXT} from '../Dashboard.props';
 
-import {Statistic} from '../../../features/dashboard/model';
+import {Statistic} from 'features/dashboard/model';
 
 const PieChartColors = {
   Completed: '#bab1c0',

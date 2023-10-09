@@ -1,10 +1,12 @@
-import Title from '../../shared/ui/Title/Title';
-import Button from '../../shared/ui/Button';
+import React from 'react';
+
+import Title from 'shared/ui/Title/Title';
+import Button from 'shared/ui/Button';
 
 import styles from './Header.module.css';
 
-import {TitleSize} from '../../shared/ui/Title/Title.props';
-import {useLogout} from '../../shared/services/auth/hooks';
+import {TitleSize} from 'shared/ui/Title/Title.props';
+import {useLogout} from 'shared/services/auth/hooks';
 
 const Header = () => {
   const logout = useLogout();

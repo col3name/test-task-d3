@@ -1,13 +1,13 @@
 import React from 'react';
 
-import PieChart from '../../shared/ui/PieChart/PieChart';
-import Title from '../../shared/ui/Title/Title';
+import PieChart from 'shared/ui/PieChart/PieChart';
+import Title from 'shared/ui/Title/Title';
 import Legend from './Legend';
 
 import styles from './Dashboard.module.css';
 
-import {TitleAlign, TitleSize} from '../../shared/ui/Title/Title.props';
-import Colors from '../../shared/styles/colors';
+import {TitleAlign, TitleSize} from 'shared/ui/Title/Title.props';
+import Colors from 'shared/styles/colors';
 import {
   DashboardStatisticProps,
   DashStatusTypes,

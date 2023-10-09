@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import {getClientWithAuth} from './shared/api/graphql';
 
 import { store } from './app/store';
-import {initSentry} from "./shared/sentry/sentry";
+import {initSentry} from './shared/sentry/sentry';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 initSentry();

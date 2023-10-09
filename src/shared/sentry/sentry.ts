@@ -1,6 +1,6 @@
-import React from "react";
-import {createRoutesFromChildren, matchRoutes, useLocation, useNavigationType} from "react-router-dom";
-import * as Sentry from "@sentry/react";
+import React from 'react';
+import {createRoutesFromChildren, matchRoutes, useLocation, useNavigationType} from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 
 export const initSentry = () => {
   Sentry.init({
@@ -25,7 +25,7 @@ export const initSentry = () => {
     tracesSampleRate: 1.0,
 
     // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
-    tracePropagationTargets: ["localhost", /^https:\/\/actionconsole-936bb\.web\.app/],
+    tracePropagationTargets: ['localhost', /^https:\/\/actionconsole-936bb\.web\.app/],
 
     // Capture Replay for 10% of all sessions,
     // plus for 100% of sessions with an error

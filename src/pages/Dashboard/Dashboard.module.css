@@ -12,9 +12,15 @@
 
 .dashboardWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   gap: 40px;
+}
+
+@media screen and (max-width: 1200px){
+  .dashboardWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 800px){

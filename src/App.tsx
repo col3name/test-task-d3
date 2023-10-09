@@ -20,7 +20,9 @@ function App() {
   const isExpired = isExpiredToken(token);
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" onClick={ () => {
+        throw Error('Unhandled error');
+      }}>
         <Routes>
           <Route path="/login" element={<Login isExpired={isExpired} />} />
           <Route path="/dashboard" element={<RequireAuth>

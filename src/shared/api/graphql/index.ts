@@ -24,7 +24,7 @@ export const getAuthLink = () => {
     return {
       headers: {
         ...headers,
-        Authorization: authToken ? `Bearer ${authToken}` : '', // Include the token if it exists
+        Authorization: authToken ? `Bearer ${authToken}` : '',
       },
     };
   });
